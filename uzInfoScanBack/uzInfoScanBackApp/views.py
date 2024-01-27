@@ -15,7 +15,7 @@ class ItemList(generics.ListCreateAPIView):
 
 class HelloWorldView(APIView):
     def get(self, request):
-        data = {'message': 'HELLO OAOAOAO'}
+        data = {'message': 'HELLO WORLD'}
         serializer = HelloWorldSerializer(data)
         return render(request, 'hello_world.html', {'message': serializer.data['message']})
 
@@ -25,7 +25,6 @@ class LombardModelAPIView(APIView):
         try:
             with open('/Users/tisenres/PycharmProjects/uzInfoScanBack/uzInfoScanBack/uzInfoScanBackApp/datasets/lombard.json', 'r') as file:
                 data = json.load(file)
-                print("JSON Data:", data)
         except FileNotFoundError:
             return Response({"error": "File not found"}, status=status.HTTP_404_NOT_FOUND)
 
@@ -46,19 +45,3 @@ class LombardModelAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    # def get(self, requests):
-    #     try:
-    #         with open(
-    #                 '/Users/tisenres/PycharmProjects/uzInfoScanBack/uzInfoScanBack/uzInfoScanBackApp/datasets/lombard.json','r') as file:
-    #             data = json.load(file)
-    #             print("JSON Data:", data)
-    #     except FileNotFoundError:
-    #         return Response({"error": "File not found"}, status=status.HTTP_404_NOT_FOUND)
-    #
-    #     serializer = LombardModelSerializer(data=data, many=True)
-    #
-    #     if serializer.is_valid():
-    #         return Response(serializer.data, status=status.HTTP_200_OK)
-    #
-    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
