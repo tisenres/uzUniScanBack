@@ -1,16 +1,23 @@
-<!-- uzInfoScanBackApp/templates/lombard_data.html -->
-
+<!-- yourappname/templates/lombard_list.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Lombard Data</title>
+    <meta charset="UTF-8">
+    <title>Lombard List</title>
 </head>
 <body>
-    <h1>Lombard Data</h1>
+    <h1>Lombard List</h1>
     <ul>
         {% for item in lombard_data %}
-            <li>{{ item.field1 }} - {{ item.field2 }}</li>
-            <!-- Add more fields as needed -->
+            <li>
+                <strong>STIR:</strong> {{ item.STIR }}<br>
+                <strong>Nomi:</strong> {{ item.Nomi }}<br>
+                <strong>Manzil:</strong> {{ item.Manzil }}<br>
+                <strong>Sana:</strong> {{ item.Sana }}<br>
+                <strong>Raqam:</strong> {{ item.Raqam }}<br>
+                <strong>Muddati:</strong> {{ item.Muddati }}<br>
+                <hr>
+            </li>
         {% endfor %}
     </ul>
 </body>

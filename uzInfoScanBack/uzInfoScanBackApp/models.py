@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 
 
@@ -13,6 +15,9 @@ class LombardModel(models.Model):
     STIR = models.CharField(max_length=20)
     Nomi = models.CharField(max_length=255)
     Manzil = models.TextField()
-    Sana = models.DateField()
-    Raqam = models.IntegerField()
-    Muddati = models.DateField()
+    Sana = models.CharField(max_length=10)
+    Raqam = models.CharField(max_length=10)
+    Muddati = models.CharField(max_length=10)
+
+    def __str__(self):
+        return f"{self.Nomi} - {self.Raqam}"
