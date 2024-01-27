@@ -36,7 +36,7 @@ To set up UzInfoScan locally, follow these steps:
 1. Clone the repository:
    
    ```bash
-   git clone https://github.com/your-username/UzInfoScan.git
+   git clone https://github.com/tisenres/UzInfoScan.git
    cd UzInfoScan
    ```
    
