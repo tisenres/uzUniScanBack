@@ -1,10 +1,11 @@
-from django.http import JsonResponse
+import json
+
 from django.shortcuts import render
 from rest_framework import generics, status
-from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Item, LombardModel
+from .models import Item
 from .serializers import ItemSerializer, HelloWorldSerializer, LombardModelSerializer
 
 
@@ -20,13 +21,16 @@ class HelloWorldView(APIView):
         return render(request, 'hello_world.html', {'message': serializer.data['message']})
 
 
-@api_view(['GET'])
-def export_data(request):
-    data = LombardModel.objects.all()
-    serializer = LombardModelSerializer(data, many=True)
-    json_data = serializer.data
+class LombardModelAPIView(APIView):
+    def post(self):
+        # Read the JSON file
+        with open('datasets/lombard.json', 'r') as file:
+            data = json.load(file)
 
-    # Save json_data to a file
-    # Add logic to save the data to a file on your PC
-
-    return JsonResponse({'success': True})
+        # Deserialize JSON data using the serializer
+        serializer = LombardModelSerializer(data=data)
+        if serializer.is_valid():
+            # Save the deserialized data to the database
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
