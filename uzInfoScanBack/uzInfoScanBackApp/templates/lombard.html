@@ -1,10 +1,17 @@
+<!-- uzInfoScanBackApp/templates/lombard_data.html -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Lombard Data</title>
 </head>
 <body>
-
+    <h1>Lombard Data</h1>
+    <ul>
+        {% for item in lombard_data %}
+            <li>{{ item.field1 }} - {{ item.field2 }}</li>
+            <!-- Add more fields as needed -->
+        {% endfor %}
+    </ul>
 </body>
 </html>
