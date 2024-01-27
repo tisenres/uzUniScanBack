@@ -34,19 +34,26 @@ To explore the frontend of UzInfoScan, follow the instructions below:
 To set up UzInfoScan locally, follow these steps:
 
 1. Clone the repository:
+   
    ```bash
    git clone https://github.com/your-username/UzInfoScan.git
    cd UzInfoScan
    ```
-2. Install dependencies:
-   ```
+   
+3. Install dependencies:
+
+   ```bash
    pip install -r requirements.txt
    ```
-3. Run migrations:
-   ```
+   
+5. Run migrations:
+   
+   ```bash
    python manage.py migrate
    ```
-4. Start the development server:
-   ```
+   
+7. Start the development server:
+   
+   ```bash
    python manage.py runserver
    ```
