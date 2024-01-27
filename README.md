@@ -25,7 +25,7 @@ The current demo version focuses on checking Lombards, providing a glimpse into 
 
 To explore the frontend of UzInfoScan, follow the instructions below:
 
-1. **[Link to Frontend](#)** (Replace with the actual link)
+1. **[Link to Frontend](https://github.com/sodikovikhtiyor/uzuniscan)** (Replace with the actual link)
 
    Explore the user-friendly interface to interact with the application and access verified information about organizations.
 
