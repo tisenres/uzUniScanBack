@@ -1,4 +1,4 @@
-# UzIniScan
+# UzUniScan
 
 UzUniScan is an application designed to verify the reliability of organizations by checking their licenses and official activities by government laws. The application is built using the Python Django framework for the backend API, allowing seamless communication with the front end. The front end fetches datasets from Open Data sources locally and shares them using GET and POST requests.
 
